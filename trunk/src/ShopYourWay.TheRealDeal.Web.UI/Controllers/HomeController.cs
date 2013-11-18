@@ -24,6 +24,7 @@ namespace ShopYourWay.TheRealDeal.Web.UI.Controllers
 		    _platformTokenProvider = new PlatformTokenProvider(new HttpContextProvider());
 		    _platformSettings = new PlatformSettings();
 		    _usersApi = new UsersApi(new HttpContextProvider());
+
 	    }
 
 	    public ActionResult Index()
