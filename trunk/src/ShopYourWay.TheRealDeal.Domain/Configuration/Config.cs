@@ -39,5 +39,19 @@ namespace ShopYourWay.TheRealDeal.Domain.Configuration
 
 			return result;
 		}
+
+		public static bool GetBoolean(string key)
+		{
+			var val = ConfigurationManager.AppSettings[key];
+
+			if (string.IsNullOrEmpty(val))
+				return false;
+
+			bool result;
+			if (!bool.TryParse(val, out result))
+				throw new ConfigurationErrorsException(String.Format("Value of key '{0}' was expected to be Boolean but wasn't: {1}", key, val));
+
+			return result;
+		}
 	}
 }
